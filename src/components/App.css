@@ -1,0 +1,60 @@
+/* .App {
+  text-align: center;
+} */
+body {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: gray;
+  color: #fff;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.BeerCardSmall {
+  width: 200px;
+  padding: 10px;
+  margin: 10px;
+  background: rgba(138, 138, 138, 0.322);
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  box-shadow: 3px 1px 10px rgb(116, 116, 116);
+}
+.beerCardBig {
+  position: relative;
+  height: 500px;
+  padding: 10px 10px 10px 200px;
+  margin: 10px;
+  background: rgba(138, 138, 138, 0.322);
+  border: 1px solid rgb(116, 116, 116);
+  border-radius: 10px;
+  box-shadow: 3px 1px 10px rgb(116, 116, 116);
+}
+
+.beerCardBig__img {
+  position: absolute;
+  width: 100px;
+  left: 40px;
+  top: 50px;
+}
+
+.beerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.h1 {
+  text-align: center;
+}
