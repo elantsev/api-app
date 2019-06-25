@@ -1,0 +1,41 @@
+form {
+  background: rgba(127, 127, 127, 0.7);
+  margin: 10px auto;
+  width: fit-content;
+  padding: 5px 40px;
+  border-radius: 5px;
+}
+input {
+  background: transparent;
+  border: 1px solid white;
+  padding: 3px;
+  color: white;
+  margin: 5px;
+  width: 150px;
+}
+label {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+}
+input::placeholder {
+  color: rgb(100, 100, 100);
+}
+.h2 {
+  color: #338;
+  padding: 5px;
+  margin: 0;
+  text-align: center;
+  color: #000;
+}
+.h2:hover + .hidedDiv,
+.hidedDiv:hover {
+  height: 350px;
+}
+
+.hidedDiv {
+  height: 0px;
+  overflow: hidden;
+  transition: 0.4s ease-out;
+}

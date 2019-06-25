@@ -5,6 +5,7 @@ import Nav from "./Nav";
 import About from "./About";
 import Shop from "./Shop";
 import Home from "./Home";
+
 import BeerCardBig from "./BeerCardBig";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Router>
       <div className="App">
         <Nav />
+        
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />

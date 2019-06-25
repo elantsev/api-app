@@ -16,7 +16,10 @@ function Nav() {
         <Link style={navStyle} to="/about">
           <li>About</li>
         </Link>
-        <Link style={navStyle} to="/shop">
+        <Link
+          style={navStyle}
+          to={{ pathname: "/shop", search: "?page=2" }}
+        >
           <li>Shop</li>
         </Link>
       </ul>

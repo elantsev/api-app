@@ -7,7 +7,7 @@ export function BeerCardSmall({ beer }) {
       <p>{beer.tagline}</p>
 
       <Link to={`/shop/${beer.id}`}>
-        <img height={"200px"} src={beer.image_url} />
+        <img height={"200px"} src={beer.image_url} alt="img_small" />
       </Link>
     </div>
   );

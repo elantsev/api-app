@@ -7,9 +7,8 @@ function BeerCardBig({ fetchData, beer, match }) {
     fetchData(`https://api.punkapi.com/v2/beers/${match.params.id}`);
   }, []);
   console.log(beer);
-  if (beer != undefined) beer = beer[0];
-
-  if (beer == undefined) return "";
+  if (beer !== undefined) beer = beer[0];
+  if (beer === undefined) return "";
 
   return (
     <div className="beerCardBig">
@@ -34,7 +33,7 @@ function BeerCardBig({ fetchData, beer, match }) {
         ))}
       </ul>
 
-      <img className="beerCardBig__img" src={beer.image_url} />
+      <img className="beerCardBig__img" src={beer.image_url} alt="img_big" />
     </div>
   );
 }

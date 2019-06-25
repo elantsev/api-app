@@ -58,3 +58,8 @@ nav {
 .h1 {
   text-align: center;
 }
+
+.shopPreloader {
+  display: block;
+  margin: auto;
+}
