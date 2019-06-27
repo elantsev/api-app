@@ -7,18 +7,20 @@ import Shop from "./Shop";
 import Home from "./Home";
 
 import BeerCardBig from "./BeerCardBig";
+import Error from "./Error";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Nav />
-        
+
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
           <Route path="/shop" exact component={Shop} />
           <Route path="/shop/:id" component={BeerCardBig} />
+          <Route path="*" component={Error} />
         </Switch>
       </div>
     </Router>

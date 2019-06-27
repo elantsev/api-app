@@ -4,11 +4,12 @@ import { itemsFetchData } from "../actions/itemsFetchData";
 import { withRouter } from "react-router";
 import { compose } from "redux";
 
-export default function withFechedData(Component) {
+export default function withFechedData(Component, ...restProps) {
   function withFechedDataComponent({ fetchData, location }) {
-    let pathname = location.pathname.slice(5);
+
+    const pathname = location.pathname.slice(5);
     fetchData(`https://api.punkapi.com/v2/beers${pathname}${location.search}`);
-    return <Component />;
+    return <Component {...restProps} />;
   }
 
   const mapDispatchToProps = dispatch => {

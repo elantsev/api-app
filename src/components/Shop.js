@@ -4,7 +4,7 @@ import { compose } from "redux";
 import { BeerCardSmall } from "./BeerCardSmall";
 
 import Search from "./Search";
-import withFechedData from "../HOC/WithFechedData";
+import withFechedData from "./../HOC/withFechedData";
 
 function Shop({ items, isLoading }) {
   return (
