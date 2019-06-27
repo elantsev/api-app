@@ -1,15 +1,13 @@
-import React, { useEffect } from "react";
-import { itemsFetchData } from "./../actions/itemsFetchData";
+import React from "react";
 import { connect } from "react-redux";
+import { compose } from "redux";
+import withFechedData from "../HOC/WithFechedData";
 
-function BeerCardBig({ fetchData, beer, match }) {
-  useEffect(() => {
-    fetchData(`https://api.punkapi.com/v2/beers/${match.params.id}`);
-  }, []);
+function BeerCardBig({ beer }) {
   console.log(beer);
+  console.log(beer.length);
   if (beer !== undefined) beer = beer[0];
   if (beer === undefined) return "";
-
   return (
     <div className="beerCardBig">
       <p>{beer.name}</p>
@@ -39,17 +37,11 @@ function BeerCardBig({ fetchData, beer, match }) {
 }
 const mapStateToProps = state => {
   return {
-    beer: state.items,
-    hasErrored: state.itemsHasErrored,
-    isLoading: state.itemsIsLoading
+    beer: state.items
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchData: url => dispatch(itemsFetchData(url))
-  };
-};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+
+export default compose(
+  withFechedData,
+  connect(mapStateToProps)
 )(BeerCardBig);

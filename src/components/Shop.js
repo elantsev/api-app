@@ -1,18 +1,12 @@
 import React, { useEffect } from "react";
-import { BeerCardSmall } from "./BeerCardSmall";
 import { connect } from "react-redux";
-// import { withRouter } from "react-router";
-// import "./App.css";
-import queryString from "query-string";
+import { compose } from "redux";
+import { BeerCardSmall } from "./BeerCardSmall";
+
 import Search from "./Search";
-import { itemsFetchData } from "./../actions/itemsFetchData";
+import withFechedData from "../HOC/WithFechedData";
 
-function Shop({ fetchData, items, location, isLoading }) {
-  useEffect(() => {
-    fetchData(`https://api.punkapi.com/v2/beers${location.search}`);
-    console.log(queryString.parse(location.search));
-  }, [location.search]);
-
+function Shop({ items, isLoading }) {
   return (
     <>
       <h1 className="h1">Shop Page</h1> <Search />
@@ -43,12 +37,8 @@ const mapStateToProps = state => {
     isLoading: state.itemsIsLoading
   };
 };
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchData: url => dispatch(itemsFetchData(url))
-  };
-};
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+
+export default compose(
+  withFechedData,
+  connect(mapStateToProps)
 )(Shop);
