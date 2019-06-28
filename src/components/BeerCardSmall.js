@@ -5,6 +5,7 @@ export function BeerCardSmall({ beer }) {
     <div className="BeerCardSmall">
       <p>{beer.name}</p>
       <p>{beer.tagline}</p>
+      <p>{`abv: ${beer.abv} %`}</p>
 
       <Link to={`/shop/${beer.id}`}>
         <img height={"200px"} src={beer.image_url} alt="img_small" />

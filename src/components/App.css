@@ -63,3 +63,10 @@ nav {
   display: block;
   margin: auto;
 }
+
+.active {
+  /* background: rgb(122, 122, 122); */
+  color: #fff;
+  border-radius: 10px;
+  text-shadow: 0 0 35px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
+}

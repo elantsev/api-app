@@ -4,8 +4,15 @@ import style from "./Search.module.css";
 import "react-datepicker/dist/react-datepicker.css";
 import "./App.css";
 import { Link } from "react-router-dom";
+import { withRouter } from "react-router";
+import queryString from "query-string";
+import { compose } from "redux";
 
-function Search() {
+function Search(route) {
+  let currentSearchStr = route.location.search;
+  let currentSearchStrObj = queryString.parse(currentSearchStr);
+  console.log(currentSearchStrObj);
+
   //   const [date, setDate] = useState({
   //     startDate: new Date(),
   //     endDate: new Date()
@@ -32,7 +39,7 @@ function Search() {
 
   const handleChange = ({ target: { value, id } }) => {
     setSearchData({ ...searchData, [id]: value });
-    setSearchFull({ ...searchData, [id]: value });
+    setSearchFull({ ...searchData, [id]: value }, currentSearchStrObj);
   };
 
   const handleClear = () => {
@@ -40,8 +47,8 @@ function Search() {
     setSearch("");
   };
 
-  function setSearchFull(searchData) {
-    let data = { ...searchData };
+  function setSearchFull(searchData, currentSearchStrObj) {
+    let data = { ...searchData, ...currentSearchStrObj };
     let result = "?";
     for (const key in data) {
       if (data.hasOwnProperty(key)) {
@@ -194,4 +201,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default compose(withRouter)(Search);

@@ -5,8 +5,13 @@ import { BeerCardSmall } from "./BeerCardSmall";
 
 import Search from "./Search";
 import withFechedData from "./../HOC/withFechedData";
+import Pagination from "./Pagination";
+import { withRouter } from "react-router";
 
-function Shop({ items, isLoading }) {
+function Shop({ items, isLoading, location: { search } }) {
+  console.log(search);
+  // useEffect(() => {}, search);
+
   return (
     <>
       <h1 className="h1">Shop Page</h1> <Search />
@@ -26,6 +31,7 @@ function Shop({ items, isLoading }) {
           </div>
         </div>
       )}
+      <Pagination />
     </>
   );
 }
@@ -40,5 +46,6 @@ const mapStateToProps = state => {
 
 export default compose(
   withFechedData,
+  withRouter,
   connect(mapStateToProps)
 )(Shop);

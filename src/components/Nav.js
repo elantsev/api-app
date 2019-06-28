@@ -1,27 +1,32 @@
 import React from "react";
 // import "./App.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Nav() {
   const navStyle = {
-    color: "#fff"
+    color: "#fff",
+    padding: "20px"
   };
 
   return (
     <nav>
-      <Link style={navStyle} to="/">
+      <NavLink exact style={navStyle} to="/">
         <h1>Logo</h1>
-      </Link>
+      </NavLink>
       <ul className="nav-links">
-        <Link style={navStyle} to="/about">
-          <li>About</li>
-        </Link>
-        <Link
-          style={navStyle}
-          to={{ pathname: "/shop", search: "?page=2&per_page=3" }}
-        >
-          <li>Shop</li>
-        </Link>
+        <li>
+          <NavLink style={navStyle} to="/about">
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            style={navStyle}
+            to={{ pathname: "/shop", search: "?page=2&per_page=3" }}
+          >
+            Shop
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );

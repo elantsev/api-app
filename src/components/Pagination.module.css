@@ -1,0 +1,36 @@
+.ul {
+  display: flex;
+  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.li {
+  padding: 3px;
+  background: transparent;
+  min-width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid #87d3ff;
+  margin: 5px;
+  cursor: pointer;
+}
+.li a {
+  color: #87d3ff;
+  font-family: cursive;
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+.select {
+  /* /* border-radius: 10px; */
+  border: none;
+  background: transparent;
+  width: fit-content;
+  height: 40px;
+  cursor: pointer;
+  color: #87d3ff;
+  font-family: cursive;
+  font-size: 1.3rem;
+}
