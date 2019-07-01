@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router";
 import queryString from "query-string";
 import { compose } from "redux";
+import { PropTypes } from "prop-types";
 
 function Search(route) {
   let currentSearchStr = route.location.search;
@@ -202,3 +203,10 @@ function Search(route) {
 }
 
 export default compose(withRouter)(Search);
+
+Search.propTypes = {
+  route: PropTypes.object
+};
+Search.defaultProps = {
+  route: {}
+};

@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { compose } from "redux";
 import withFechedData from "./../HOC/withFechedData";
+import PropTypes from "prop-types";
 
 function BeerCardBig({ beer }) {
   console.log(beer);
@@ -45,3 +46,31 @@ export default compose(
   withFechedData,
   connect(mapStateToProps)
 )(BeerCardBig);
+
+BeerCardBig.propTypes = {
+  beer: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      tagline: PropTypes.string,
+      boil_volume: PropTypes.object,
+      brewers_tips: PropTypes.string,
+      contributed_by: PropTypes.string,
+      description: PropTypes.string,
+      first_brewed: PropTypes.string
+    })
+  )
+};
+BeerCardBig.defaultProps = {
+  beer: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: "",
+      tagline: "",
+      boil_volume: "",
+      brewers_tips: "",
+      contributed_by: "",
+      description: "",
+      first_brewed: "",
+      image_url: ""
+    })
+  )
+};

@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
+
 export function BeerCardSmall({ beer }) {
   return (
     <div className="BeerCardSmall">
@@ -13,3 +15,20 @@ export function BeerCardSmall({ beer }) {
     </div>
   );
 }
+
+BeerCardSmall.propTypes = {
+  beer: PropTypes.shape({
+    name: PropTypes.string,
+    tagline: PropTypes.string,
+    abv: PropTypes.number,
+    id: PropTypes.number
+  })
+};
+BeerCardSmall.defaultProps = {
+  beer: PropTypes.shape({
+    name: "",
+    tagline: "",
+    abv: "",
+    id: ""
+  })
+};

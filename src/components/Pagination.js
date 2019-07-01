@@ -7,6 +7,7 @@ import { NavLink } from "react-router-dom";
 import { compose } from "redux";
 import { withRouter } from "react-router";
 import { useState } from "react";
+import { PropTypes } from "prop-types";
 
 function Pagination(route) {
   const [perPage, setPerPage] = useState(80);
@@ -70,7 +71,7 @@ function Pagination(route) {
     return newQueryString;
   }
 
-  function getNumbersOfPages(index) {
+  function getNumbersOfPages(pages) {
     let numbersOfPages = [];
     for (let index = 1; index <= pages; index++) {
       numbersOfPages.push(index);
@@ -80,3 +81,10 @@ function Pagination(route) {
 }
 
 export default compose(withRouter)(Pagination);
+
+Pagination.propTypes = {
+  route: PropTypes.object
+};
+Pagination.defaultProps = {
+  route: {}
+};
