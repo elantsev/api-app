@@ -1,12 +1,9 @@
 import React from "react";
+import Shop from "./Shop";
 // import "./App.css";
 
 function Home() {
-  return (
-    <div>
-      <h1 className="h1">Home Page</h1>
-    </div>
-  );
+  return <Shop />;
 }
 
 export default Home;
