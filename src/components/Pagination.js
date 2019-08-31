@@ -33,7 +33,7 @@ function Pagination(route) {
       {numbersOfPages.map(number => (
         <li key={number} className={style.li}>
           <NavLink
-            className={currentPage == number ? "active" : null}
+            className={currentPage == number ? "currentPage" : null}
             to={`/shop?${getQueryString(currentQueryString, number, perPage)}`}
           >
             {number}

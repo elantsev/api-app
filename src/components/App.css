@@ -18,6 +18,13 @@ nav {
   align-items: center;
   list-style: none;
 }
+.nav-links > a {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
 
 .BeerCardSmall {
   width: 200px;
@@ -60,11 +67,22 @@ nav {
   display: block;
   margin: auto;
 }
+li > a.currentPage {
+  background: rgb(2, 2, 2, 0.746);
+  display: block;
+  width: 100%;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 3px 0 3px rgba(2, 2, 2, 0.746), 0 3px 3px rgba(2, 2, 2, 0.746),
+    -3px 0 3px rgba(2, 2, 2, 0.746), 0 -3px 3px rgba(2, 2, 2, 0.746);
+}
 
 nav li .active {
   background: rgb(88, 88, 88);
-  display: block;
   margin: 0;
   color: #fff;
   border-radius: 10px;
+  box-shadow: 3px 0 3px rgba(2, 2, 2, 0.746), 0 3px 3px rgba(2, 2, 2, 0.746),
+    -3px 0 3px rgba(2, 2, 2, 0.746), 0 -3px 3px rgba(2, 2, 2, 0.746);
 }

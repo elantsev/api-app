@@ -5,7 +5,6 @@
   flex-wrap: wrap;
 }
 .li {
-  padding: 3px;
   background: transparent;
   min-width: 30px;
   height: 30px;
@@ -13,12 +12,12 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  border: 2px solid #87d3ff;
+  border: 2px solid #bdbebe;
   margin: 5px;
   cursor: pointer;
 }
 .li a {
-  color: #87d3ff;
+  color: #bdbebe;
   font-family: cursive;
   font-size: 1.3rem;
   text-decoration: none;
@@ -30,7 +29,7 @@
   width: fit-content;
   height: 40px;
   cursor: pointer;
-  color: #87d3ff;
+  color: #bdbebe;
   font-family: cursive;
   font-size: 1.3rem;
 }
